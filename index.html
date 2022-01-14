@@ -53,14 +53,14 @@
               <a href="#footer" class="menu__item-link" role="menuitem">Контакты</a>
             </li>
           </ul>
-          <div class="header__sign-in">
+          <a href="#" class="header__sign-in">
             <svg width="13" height="13" viewbox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
                 fill="white" />
             </svg>
-            <a href="#" class="header__sign-in-link">Войти</a>
-          </div>
+            Войти
+          </a>
         </nav>
         <button class="header__search-open-button" aria-label="Открыть поиск">
           <svg width="30" height="29" viewbox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,19 +77,33 @@
       <div class="header__container container">
         <ul class="header__categories categories">
           <li class="categories__item">
-            <a href="#about" class="categories__item-link">Реализм</a>
+            <button class="categories__item-open">Реализм</button>
+            <ul class="categories__dropdown">
+              <li class="categories__dropdown-item">
+                <a href="#" class="categories__dropdown-item-link">Тинторетто</a>
+              </li>
+              <li class="categories__dropdown-item">
+                <a href="#" class="categories__dropdown-item-link">Фридрих</a>
+              </li>
+              <li class="categories__dropdown-item">
+                <a href="#" class="categories__dropdown-item-link">Леонардо</a>
+              </li>
+              <li class="categories__dropdown-item">
+                <a href="#" class="categories__dropdown-item-link">Верроккьо</a>
+              </li>
+            </ul>
           </li>
           <li class="categories__item">
-            <a href="#" class="categories__item-link">Импрессионизм</a>
+            <button class="categories__item-open">Импрессионизм</button>
           </li>
           <li class="categories__item">
-            <a href="#workflow" class="categories__item-link">Постимпрессионизм</a>
+            <button class="categories__item-open">Постимпрессионизм</button>
           </li>
           <li class="categories__item">
-            <a href="#" class="categories__item-link">Авангард</a>
+            <button class="categories__item-open">Авангард</button>
           </li>
           <li class="categories__item">
-            <a href="#footer" class="categories__item-link">Футуризм</a>
+            <button class="categories__item-open">Футуризм</button>
           </li>
         </ul>
         <form class="header__search search" role="search">
@@ -141,6 +155,8 @@
     </section>
 
   </main>
+
+  <script src="js/script.js"></script>
 
 </body>
 

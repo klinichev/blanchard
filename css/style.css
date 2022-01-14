@@ -24,7 +24,11 @@
 
 :root {
   --white: #fff;
+  --dark-gray: #333;
   --black: #000;
+  --violet: #7943a4;
+  --azuremyst: #c283f3;
+  --lavander: #9d5cd0;
   /* --blue: #3f2aff;
   --dark-blue: #2e2b44;
   --gray: #e0e0e0;
@@ -114,6 +118,11 @@ section {
   font-size: 0;
 }
 
+.header__logo:focus {
+  outline: 8px solid var(--violet);
+  background-color: var(--violet);
+}
+
 .header__burger-menu,
 .header__search-open-button {
   padding: 0;
@@ -150,17 +159,57 @@ section {
   line-height: 25px;
   font-weight: 600;
   color: var(--white);
+  transition: color .3s ease;
+}
+
+.menu__item-link:hover {
+  color: var(--azuremyst);
+}
+
+.menu__item-link:focus {
+  outline: 5px solid var(--violet);
+  background-color: var(--violet);
+}
+
+.menu__item-link:active {
+  color: var(--violet);
 }
 
 .header__sign-in svg {
-  margin-right: 7px;
+  margin-right: 3px;
 }
 
-.header__sign-in-link {
+.header__sign-in {
   font-size: 18px;
   line-height: 25px;
   font-weight: 400;
   color: var(--white);
+  transition: color .3s ease;
+}
+
+.header__sign-in path {
+  transition: fill .3s ease;
+}
+
+.header__sign-in:hover {
+  color: var(--azuremyst);
+}
+
+.header__sign-in:hover path {
+  fill: var(--azuremyst);
+}
+
+.header__sign-in:focus {
+  outline: 5px solid var(--violet);
+  background-color: var(--violet);
+}
+
+.header__sign-in:active {
+  color: var(--lavander);
+}
+
+.header__sign-in:active path {
+  fill: var(--lavander);
 }
 
 .header__bottom {
@@ -184,10 +233,82 @@ section {
   margin-right: 0;
 }
 
-.categories__item-link {
+.categories__item-open {
+  position: relative;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   font-size: 18px;
   line-height: 25px;
   font-weight: 400;
+  color: var(--white);
+  transition: color .3s ease;
+}
+
+.categories__item-open::after {
+  position: absolute;
+  content: "";
+  right: -17px;
+  height: 8px;
+  width: 8px;
+  margin-top: 7px;
+	border: 1px solid var(--white);
+	border-width: 1px 1px 0 0;
+	transform: scaleY(0.85) rotate(135deg);
+  transition: border-color .3s ease;
+}
+
+.categories__item-open:hover {
+  color: var(--lavander);
+}
+
+.categories__item-open:hover::after {
+  border-color: var(--lavander);
+}
+
+.categories__item-open:focus {
+  outline: 5px solid var(--violet);
+  background-color: var(--violet);
+}
+
+.categories__item-open:active {
+  color: var(--violet);
+}
+
+.categories__item-open:active::after {
+  margin-top: 12px;
+  border-color: var(--violet);
+  transform: scaleY(0.85) rotate(-45deg);
+}
+
+.categories__dropdown {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  padding: 40px;
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 0;
+}
+
+.categories__dropdown-item {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  background-color: var(--black);
+}
+
+.categories__dropdown-item:last-child {
+  margin-bottom: 0;
+}
+
+.categories__dropdown-item-link {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
   color: var(--white);
 }
 
@@ -224,6 +345,9 @@ section {
 
 .heroes {
   background-image: url("../img/heroes-background.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .heroes__panel {
@@ -257,14 +381,31 @@ section {
 }
 
 .heroes__button {
-  padding: 23px 35px;
+  padding: 17px 29px;
   display: block;
-  background-color: #9d5cd0;
+  background-color: var(--lavander);
+  border: 3px solid var(--lavander);
   border-radius: 100px;
   font-size: 18px;
   line-height: 25px;
   font-weight: 700;
   color: var(--white);
+  transition: border-color .3s ease;
+  transition: background-color .3s ease;
+}
+
+.heroes__button:hover,
+.heroes__button:active {
+  border-color: #d1a9f0;
+}
+
+.heroes__button:focus {
+  outline: 2px solid var(--azuremyst);
+  outline-offset: 5px;
+}
+
+.heroes__button:active {
+  background-color: #7943a4;
 }
 
 /* About */
@@ -273,7 +414,7 @@ section {
   font-size: 48px;
   line-height: 65px;
   font-weight: 400;
-  color: #333;
+  color: var(--dark-gray);
 }
 
 .about__paragraph {
@@ -283,7 +424,7 @@ section {
   font-size: 16px;
   line-height: 32px;
   font-weight: 400;
-  color: #333;
+  color: var(--dark-gray);
 }
 
 /* Media */
